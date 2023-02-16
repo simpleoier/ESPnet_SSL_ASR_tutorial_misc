@@ -86,7 +86,7 @@ for dset in "${train_set}" "${dev_set}" ${test_sets}; do
             --hubert_type "${hubert_type}" \
             --hubert-model-url "${hubert_url}" \
             --hubert-model-path "${hubert_dir_path}" \
-            --s3prl_upstream_name "${s3prl_upstream_name}" \
+            ${s3prl_upstream_name:+--s3prl-upstream-name ${s3prl_upstream_name}} \
             --layer "${layer}" \
             --write_num_frames "ark,t:${_logdir}/utt2num_frames.JOB" \
             "scp:${_logdir}/wav.JOB.scp" \
