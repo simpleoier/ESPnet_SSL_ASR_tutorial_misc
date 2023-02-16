@@ -25,6 +25,8 @@ hubert_type="fairseq"
 hubert_url="https://dl.fbaipublicfiles.com/hubert/hubert_base_ls960.pt"
 hubert_dir_path="./downloads/hubert_pretrained_models/hubert_base_ls960.pt"
 
+s3prl_upstream_name=
+
 nj=1
 python=python3       # Specify python to execute espnet commands.
 
@@ -84,6 +86,7 @@ for dset in "${train_set}" "${dev_set}" ${test_sets}; do
             --hubert_type "${hubert_type}" \
             --hubert-model-url "${hubert_url}" \
             --hubert-model-path "${hubert_dir_path}" \
+            --s3prl_upstream_name "${s3prl_upstream_name}" \
             --layer "${layer}" \
             --write_num_frames "ark,t:${_logdir}/utt2num_frames.JOB" \
             "scp:${_logdir}/wav.JOB.scp" \
