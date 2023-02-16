@@ -77,7 +77,7 @@ for dset in "${train_set}" "${dev_set}" ${test_sets}; do
 
     # shellcheck disableSC2046,SC2086
     ${_cmd} --gpu "${_ngpu}" JOB=1:"${_nj}" "${_logdir}"/dump_feats.JOB.log \
-        ${python} local/dump_mfcc_or_hubert_features.py \
+        ${python} local/dump_feats.py \
             --in_filetype "sound" \
             --out_filetype "mat" \
             --feature_type "${feature_type}" \
