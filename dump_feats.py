@@ -10,7 +10,7 @@ import argparse
 import logging
 
 import numpy as np
-from .feats_loaders import (
+from feats_loaders import (
     ESPnetHubertFeatureReader,
     HubertFeatureReader,
     MfccFeatureReader,
