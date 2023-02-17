@@ -14,17 +14,19 @@ log() {
 train_set=
 dev_set=
 test_sets=
-datadir=dump/raw
-feat_dir=dump/hubert_feats
+datadir=dump/raw/org
+feat_dir=dump_feats
 use_gpu=true
 
-feature_type=hubert
+feature_type=hubert  # "mfcc", "hubert", "s3prl"
 layer=12
 
+# HuBERT related
 hubert_type="fairseq"
 hubert_url="https://dl.fbaipublicfiles.com/hubert/hubert_base_ls960.pt"
 hubert_dir_path="./downloads/hubert_pretrained_models/hubert_base_ls960.pt"
 
+# s3prl related
 s3prl_upstream_name=
 
 nj=1
@@ -42,7 +44,7 @@ if [ $# -ne 0 ]; then
     exit 0
 fi
 
-if [ "${feature_type}" = "hubert" ]; then
+if [ "${feature_type}" = "hubert" ] || [ "${feature_type}" = "s3prl" ]; then
     suffix="layer${layer}/"
 else
     suffix=""
