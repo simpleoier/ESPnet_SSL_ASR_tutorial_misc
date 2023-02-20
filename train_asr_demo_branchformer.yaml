@@ -1,7 +1,7 @@
 batch_type: numel
 batch_bins: 20000000
 accum_grad: 1    # gradient accumulation steps
-max_epoch: 70
+max_epoch: 50
 patience: none
 init: xavier_uniform
 best_model_criterion:  # criterion to save best models
@@ -9,7 +9,7 @@ best_model_criterion:  # criterion to save best models
     - acc
     - max
 keep_nbest_models: 10  # save nbest models and average these checkpoints
-use_amp: false    # whether to use automatic mixed precision
+use_amp: true    # whether to use automatic mixed precision
 num_att_plot: 0  # do not save attention plots to save time in the demo
 num_workers: 2   # number of workers in dataloader
 
