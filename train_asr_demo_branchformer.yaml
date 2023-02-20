@@ -1,8 +1,8 @@
 batch_type: numel
-batch_bins: 20000000
+batch_bins: 4000000
 accum_grad: 1    # gradient accumulation steps
-max_epoch: 50
-patience: none
+max_epoch: 40
+patience: 10
 init: xavier_uniform
 best_model_criterion:  # criterion to save best models
 -   - valid
