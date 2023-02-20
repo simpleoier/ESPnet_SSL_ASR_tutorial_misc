@@ -45,7 +45,7 @@ if [ $# -ne 0 ]; then
 fi
 
 if [ "${feature_type}" = "hubert" ] || [ "${feature_type}" = "s3prl" ]; then
-    suffix="layer${layer}/"
+    suffix=""
 else
     suffix=""
     use_gpu=false  # mfcc feature does not require GPU.
